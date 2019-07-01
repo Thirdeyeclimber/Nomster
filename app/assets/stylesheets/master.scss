@@ -1,5 +1,15 @@
 @import "bootstrap";
 
+h1, h2, h3, h4, h5, h6, {
+	margin: 0px;
+	padding: 0px;
+}
+
+.navbar {
+	background: image_url('black_scales.png');
+  box-shadow: 1px 2px 4px #2a2a2a;
+}
+
 .booyah-box {
   -webkit-box-shadow:1px 1px 2px 0 #d0d0d0;
   -moz-box-shadow:1px 1px 2px 0 #d0d0d0;
@@ -12,7 +22,7 @@
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6, {
-	margin: 0px;
-	padding: 0px;
+body {
+	background: image_url('gplaypattern_@2X.png');
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
