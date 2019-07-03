@@ -6,4 +6,6 @@
 	</div>
 <% end%>
 
-	<%= will_paginate @places, renderer: BootstrapPagination::Rails, previous_label: "Back", next_label: "Next", inner_window: 1, outer_window: 0 %>
+	<div class="apple_pagination col-4 offset-4">
+		<%= will_paginate(@places, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: "⃪  Back", inner_window: 1, outer_window: 0) %>
+	</div>
