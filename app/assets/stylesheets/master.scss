@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Rammetto+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 h1, h2, h3, h4, h5, h6, {
@@ -14,10 +14,11 @@ h1, h2, h3, h4, h5, h6, {
 }
 
 .navbar-inverse .navbar-brand {
-	color: orange;
-	font-family: 'Rammetto One', cursive;
+	color: white;
+  font-family: 'Rubik Mono One', sans-serif;
 	font-weight: 600;
 	letter-spacing: 2px;
+  font-size: 30px;
 }
 
 .booyah-box {
@@ -31,10 +32,11 @@ h1, h2, h3, h4, h5, h6, {
   margin-bottom: 15px;
   padding: 20px;
   border-radius: 10px;
+  background: image_url('shattered.png');
 }
 
 body {
-	background: image_url('shattered.png');
+	background: image_url('white-waves.png');
 	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
