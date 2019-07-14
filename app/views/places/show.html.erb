@@ -66,13 +66,21 @@
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 	        <%= f.submit "Post Comment", class: 'btn btn-primary' %>
-				<% end %>
-      </div>
+				</div>
+			<% end %>
     </div>
   </div>
 </div>
 
-<h1>Comments</h1>
+<div class="col-10 offset-1">
+	<h1 class="float-left">Comments</h1>
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+	  Add a comment
+	</button>
+</div>
+
+<div class="clear"></div>
 
 <% @place.comments.each do |comment| %>
 	<div>
