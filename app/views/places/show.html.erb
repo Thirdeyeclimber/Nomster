@@ -13,14 +13,14 @@
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 17,
           center: myLatLng
         });
 
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Here!'
+          title: 'Here'
         });
       }
     </script>
