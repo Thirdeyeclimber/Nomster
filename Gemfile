@@ -78,10 +78,12 @@ end
 # Used for add new place form submission
 gem 'simple_form'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 gem 'devise'
 
-gem "geocoder"
+gem 'geocoder'
 
-gem "figaro"
+gem 'figaro'
+
+gem 'carrierwave', '~> 1.0'

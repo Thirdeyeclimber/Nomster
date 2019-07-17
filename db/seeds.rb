@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do |x|
-	  Place.create(name: "Bob's Place #{x}", description: "Rated #{x} in town!", address: "#{x} Ingram ct")
-end
+#100.times do |x|
+#	  Place.create(name: "Bob's Place #{x}", description: "Rated #{x} in town!", address: "#{x} Ingram ct")
+#end
