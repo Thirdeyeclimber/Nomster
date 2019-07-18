@@ -28,11 +28,10 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi8INdOfRTvlgq9HPd6ywBK2984S3-H6k&callback=initMap">
     </script>
+  	<div id="map"></div>
+	<% end %>
 
-  <div id="map"></div>
-<% end %>
-
-<br />
+	<br />
 
 	<div class="float-right">
 		<% if current_user && current_user == @place.user %>
@@ -41,9 +40,10 @@
 		<% end %>
 	</div>
 </div>
+
 <div class="clear"><br /><br /></div>
 
-<!-- Modal -->
+<!-- Review Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -69,13 +69,13 @@
 
 <div class="col-10 offset-1">
 	<h1 class="float-left">Reviews</h1>
-	<!-- Button trigger modal -->
+	<!-- Review Button trigger modal -->
 	<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
 	  Add Review
 	</button>
 </div>
 
-<div class="clear"></div>
+<div class="clear"></div><br />
 
 <div class="row">
 	<% @place.comments.each do |comment| %>
@@ -91,26 +91,48 @@
 	<% end %>
 </div>
 
-
-<div>
-	
-	<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-	  <%= f.input :caption %>
-	  <%= f.input :picture %>
-	  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-	<% end %>
-
-	<div class="clear"></div>
-
-	<div class="row">
-		<% @place.photos.each do |photo| %>
-			<div class="col-12 col-sm-6">
-			<%= image_tag photo.picture.url, class: 'img-fluid' %>
-				<blockquote>
-					<%= photo.caption %>
-					<small><%= photo.user.email %></small>
-				</blockquote>
+<!-- Photo Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        	<h4 class="modal-title" id="myModalLabel">Add A Photo</h4>
+	      </div>
+	      	<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+	      <div class="modal-body">
+					<%= f.input :caption %>
+					<%= f.input :picture %>
+				</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	        <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+				</div>
 			<% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-10 offset-1">
+	<h1 class="float-left">Photos</h1>
+	<!-- Add Photo Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+	  Add Photo
+	</button>
+</div>
+	
+<div class="clear"><br /></div>
+
+<div class="row">
+	<% @place.photos.each do |photo| %>
+		<div class="col-12 col-sm-6">
+			<%= image_tag photo.picture.url, class: 'img' %>
+			<blockquote>
+				<%= photo.caption %>
+				<small><%= photo.user.email %></small>
+			</blockquote>
 		</div>
-	</div>
+	<% end %>
 </div>
