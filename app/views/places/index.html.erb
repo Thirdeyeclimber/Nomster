@@ -1,27 +1,40 @@
+<!-- Display Places -->
 <% @places.each do |place| %>
 	<div class="booyah-box col-10 offset-1">
 		<h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
-
+		
+		<!-- Display user email -->
 		<% if place.user.present? %>
 			<small><%= place.user.email %></small>
 		<% end %>
 
+		<!-- Display last user comment -->
 		<% if place.comments.present? %>
 			<div class="col-12">
 				<blockquote>
 					<% if place.comments.last.humanized_rating.present? %>
 						<b><%= place.comments.last.humanized_rating %></b> -
-						<% end %>
+					<% end %>
 						<%= place.comments.last.message %>
 					<small><%= place.comments.last.user.email %></small>
 				</blockquote>
 			</div>
-			<% end %>
-		</div>
-	<% end%>
+		<% end %>
 
-	<div class="apple_pagination col-4 offset-4">
-		<%= will_paginate(@places, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: "< Back", next_label: "Next >", inner_window: 1, outer_window: 0) %>
+		<!-- Display last user photo -->
+		<% if place.photos.present? %>
+			<div class="col-12 col-sm-6">
+				<% if place.photos.last.picture.present? %>
+					<%= image_tag place.photos.last.picture.url, class: 'img-thumbnail' %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
+<% end %>
+
+<!-- Page Pagination -->
+<div class="apple_pagination col-4 offset-4">
+	<%= will_paginate(@places, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: "< Back", next_label: "Next >", inner_window: 1, outer_window: 0) %>
+</div>
