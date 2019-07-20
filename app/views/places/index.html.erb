@@ -3,32 +3,36 @@
 	<div class="booyah-box col-10 offset-1">
 		<h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />
-		<p><%= place.description %></p><br />
-		
-		<!-- Display user email -->
-		<% if place.user.present? %>
-			<small><%= place.user.email %></small>
-		<% end %>
+		<p><%= place.description %></p>
 
 		<!-- Display last user comment -->
 		<% if place.comments.present? %>
 			<div class="col-12">
-				<blockquote>
+				<blockquote class="text-left">
 					<% if place.comments.last.humanized_rating.present? %>
-						<b><%= place.comments.last.humanized_rating %></b> -
+						<b><%= link_to place.comments.last.humanized_rating, place_path(place) %></b> -
 					<% end %>
 						<%= place.comments.last.message %>
-					<small><%= place.comments.last.user.email %></small>
+					<div class="text-right">
+						<small><%= place.comments.last.user.email %></small>
+					</div>
 				</blockquote>
 			</div>
 		<% end %>
 
 		<!-- Display last user photo -->
 		<% if place.photos.present? %>
-			<div class="col-12 col-sm-6">
+			<div class="col-6 offset-3">
 				<% if place.photos.last.picture.present? %>
-					<%= image_tag place.photos.last.picture.url, class: 'img-thumbnail' %>
+					<%= link_to image_tag(place.photos.last.picture.url, class: 'img-thumbnail'), place_path(place) %>
 				<% end %>
+			</div>
+		<% end %>
+
+		<!-- Display user email -->
+		<% if place.user.present? %>
+			<div class="text-right">
+				<small><%= place.user.email %></small>
 			</div>
 		<% end %>
 	</div>

@@ -41,7 +41,8 @@
 	</div>
 </div>
 
-<div class="clear"><br /><br /></div>
+<br/><hr><br/>
+<div class="clear"><br /></div>
 
 <!-- Review Modal -->
 <div>
@@ -80,19 +81,22 @@
 <div class="clear"></div><br />
 
 <!-- Display Comments & Ratings -->
-<div class="row">
+<div class="row col-10 offset-1">
 	<% @place.comments.each do |comment| %>
 		<div class="col-12 col-sm-6">
 			<blockquote>
 				<% if comment.humanized_rating.present? %>
 					<b><%= comment.humanized_rating %></b> -
-					<% end %>
-					<%= comment.message %>
-				<small><%= comment.user.email %></small>
+				<% end %>
+				<%= comment.message %>
+				<div class="text-right"><small><%= comment.user.email %></small>
 			</blockquote>
 		</div>
 	<% end %>
 </div>
+
+<br/><hr><br/>
+<div class="clear"><br /></div>
 
 <!-- Add Photo Button trigger modal -->
 <div class="col-10 offset-1">
@@ -129,14 +133,15 @@
 <div class="clear"><br /></div>
 
 <!-- Display Photos -->
-<div class="row">
+<div class="row col-10 offset-1">
 	<% @place.photos.each do |photo| %>
-		<div class="img">
+		<div class="img col-10 offset-1">
 			<%= image_tag photo.picture.url, class: 'img-fluid' %>
 			<blockquote>
 				<%= photo.caption %>
-				<small><%= photo.user.email %></small>
+				<div class="text-right"><small><%= photo.user.email %></small></div>
 			</blockquote>
 		</div>
 	<% end %>
 </div>
+<br>
