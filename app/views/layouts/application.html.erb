@@ -38,9 +38,10 @@
             </li>
           <% end %>
         </ul>
-
       </div>
     </nav>
+
+    <!-- Notice banners -->
     <% if notice.present? %>
       <p class="alert alert-info"><%= notice %></p>
     <% end %>
@@ -48,24 +49,26 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
     
+    <!-- Render View -->
     <div>
       <%= yield %>
     </div>
 
-  <hr> 
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class ="col-12">
-          <div class="footer-blurb float-right">
-            Built by <a href="https://twitter.com/Thirdeyeclimber">Michael</a><br />
-            with help from <a href="https://www.trilogyed.com/">Trilogy</a><br />
+    <!-- line to seperate body from footer -->
+    <hr> 
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class ="col-12">
+            <div class="footer-blurb float-right">
+              Built by <a href="https://twitter.com/Thirdeyeclimber">Michael</a><br />
+              with help from <a href="https://www.trilogyed.com/">Trilogy</a><br />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <br/>
-
+    <br/>
   </body>
 </html>
