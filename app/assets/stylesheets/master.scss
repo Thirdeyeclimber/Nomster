@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6, {
 .navbar {
 	background: image_url('dark-grey-terrazzo.png');
   box-shadow: 1px 2px 4px #2a2a2a;
+  margin-bottom: 0;
 }
 
 .navbar-inverse .navbar-brand {
@@ -19,6 +20,7 @@ h1, h2, h3, h4, h5, h6, {
 	font-weight: 600;
 	letter-spacing: 2px;
   font-size: 30px;
+  argin-bottom: 0;
 }
 
 .booyah-box {
@@ -131,6 +133,35 @@ img:hover {
   border-radius: 5px;
 }
 
-.hr {
-  border-width: 5px;
+hr {
+  border-width: 6px;
+  border-radius: 3px;
+  background-color: black;
 }
+
+.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+  height: 550px;
+  width: 100%;
+}
+
+.carousel-item.active, 
+.carousel-item-next, 
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-caption {
+  font-size: 60px;    /* Why is this not working? */
+  font-weight: 100;   /* Why is this not working? */
+  text-shadow: rgba(0, 0, 0, 0.95) 2px 2px;
+  background-color: rgba(60, 60, 60, 0.5);
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.carousel {
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+

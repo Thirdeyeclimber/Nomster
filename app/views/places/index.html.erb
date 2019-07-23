@@ -2,37 +2,43 @@
 <!-- Bootstrap Carousel Slider for Images -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
+  	<!-- First carousel item set to active for entire display -->
     <div class="carousel-item active">
       <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
       <div class= "carousel-caption d-none d-md-block">
-      	<h3>Find the best places</h3>
+      	<h3>Find the best place to eat tonight</h3>
       </div>
     </div>
+    <!-- Second carousel item -->
     <div class="carousel-item">
       <%= image_tag 'slider2.jpg', class: 'd-block img-fluid' %>
       <div class= "carousel-caption d-none d-md-block">
-      	<h3>Local Reviews</h3>
+      	<h3>Discover hidden gems all around you</h3>
       </div>
     </div>
+     <!-- Third carousel item -->
     <div class="carousel-item">
       <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
       <div class= "carousel-caption d-none d-md-block">
-      	<h3>Local Dishes</h3>
+      	<h3>Read reviews by verified local foodies</h3>
       </div>
     </div>
+     <!-- Forth carousel item -->
     <div class="carousel-item">
-      <<%= image_tag 'slider4.jpg', class: 'd-block img-fluid' %>
-      <div class= "carousel-caption d-none d-md-block">
-      	<h3>Local Businesses</h3>
+      <%= image_tag 'slider4.jpg', class: 'd-block img-fluid' %>
+       <div class= "carousel-caption d-none d-md-block">
+      	<h3>Explore a bounty of options</h3>
       </div>
     </div>
+     <!-- Fifth carousel item -->
     <div class="carousel-item">
-      <<%= image_tag 'slider5.jpg', class: 'd-block img-fluid' %>
-      <div class= "carousel-caption d-none d-md-block">
-      	<h3>Local Farms</h3>
+      <%= image_tag 'slider5.jpg', class: 'd-block img-fluid' %>
+            <div class= "carousel-caption d-none d-md-block">
+      	<h3>Experience the highest rated food in the city</h3>
       </div>
     </div>
   </div>
+   <!-- Left and Right Arrows -->
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -42,6 +48,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<br/>
 
 <!-- Display Places -->
 <% @places.each do |place| %>
