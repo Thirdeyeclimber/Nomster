@@ -31,3 +31,15 @@
     </div>
   <% end %>
 </div>
+
+<div class="clear"></div>
+<br /><br />
+<h2 class="text-center">My Places</h2>
+<br /><br />
+<% @user.places.each do |place| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= link_to place.name, place_path(place) %></h1><br />
+    <i><%= place.address %></i><br />
+    <p><%= place.description %></p><br />
+  </div>
+<% end %>
