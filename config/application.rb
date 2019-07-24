@@ -8,8 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Nomster
   class Application < Rails::Application
-
-  	config.web_console.whitelisted_ips = '10.0.2.2'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
