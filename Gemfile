@@ -77,7 +77,7 @@ end
 
 # Used for add new place form submission
 gem 'simple_form'
-
+# Awesome font for logo
 gem 'font-awesome-rails'
 
 gem 'devise'
